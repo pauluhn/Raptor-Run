@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://nfvpeq6yilcd"]
+[gd_scene load_steps=4 format=3 uid="uid://nfvpeq6yilcd"]
 
 [ext_resource type="Texture2D" uid="uid://di3xpfpq0vutj" path="res://assets/sprites/Background/background_static.png" id="1_vdk0e"]
-[ext_resource type="Texture2D" uid="uid://dcp33q7doupfp" path="res://assets/sprites/Platform/platform.png" id="2_sxyuv"]
+[ext_resource type="PackedScene" uid="uid://bmfoeyf5wvwva" path="res://scenes/platform.tscn" id="2_cmk06"]
 [ext_resource type="PackedScene" uid="uid://dtd1vufrirn1x" path="res://scenes/player.tscn" id="3_e34a7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpvrl"]
-size = Vector2(380, 40)
 
 [node name="World" type="Node2D" groups=["example"]]
 
@@ -20,13 +17,6 @@ texture = ExtResource("1_vdk0e")
 
 [node name="Moving" type="Node2D" parent="Environment"]
 
-[node name="Platform" type="StaticBody2D" parent="Environment/Moving"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Moving/Platform"]
-texture = ExtResource("2_sxyuv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Moving/Platform"]
-position = Vector2(2.08165e-12, -20)
-shape = SubResource("RectangleShape2D_tpvrl")
+[node name="Platform" parent="Environment/Moving" instance=ExtResource("2_cmk06")]
 
 [node name="Player" parent="." instance=ExtResource("3_e34a7")]
