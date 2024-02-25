@@ -6,5 +6,5 @@ func _ready():
 	print("hello nathans")
 
 func _physics_process(delta):
-	velocity.x += gravity * delta
+	velocity.y += gravity * delta
 	move_and_slide()

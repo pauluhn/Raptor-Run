@@ -21,7 +21,7 @@ texture = ExtResource("1_vdk0e")
 [node name="Platform" parent="Environment/Moving" instance=ExtResource("2_cmk06")]
 
 [node name="Player" parent="." instance=ExtResource("3_e34a7")]
-position = Vector2(-266, -143)
+position = Vector2(-3, -214)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("4_8r166")
 gravity = 500
