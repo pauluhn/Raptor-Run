@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var gravity = 1 # this is the power of gravity in our game
 @export var jump_power = 1 # this is power of jumping for my character
+@export var camera: Camera2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var jump_sound = $JumpSound
@@ -20,6 +21,9 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	
 	if active:
+		# Update the camera position when player position changes
+		camera.position = position
+		
 		# Reset the player after landing on platform
 		if was_jumping and is_on_floor():
 			was_jumping = false
