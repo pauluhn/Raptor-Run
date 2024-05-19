@@ -9,7 +9,7 @@
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("moving_environment") groups=["example"]]
 script = ExtResource("1_76kmp")
-world_speed = 100
+world_speed = 200
 moving_environment = NodePath("Environment/Moving")
 
 [node name="Camera2D" type="Camera2D" parent="."]
